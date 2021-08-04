@@ -1,6 +1,6 @@
 import React, { useState,  useEffect  } from 'react';
 import { apiMainUrl } from '../../Utility/url'
-import { ApiCard } from '../ApiBoard/ApiCard'
+import { ApiCard } from '../ApiCard/ApiCard'
 import { fetchApi } from '../../Utility/apiCalls'
 import './App.css'
 
