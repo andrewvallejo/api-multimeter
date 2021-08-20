@@ -4,7 +4,6 @@ import { ApiCard } from '../ApiCard/ApiCard'
 import { fetchApi } from '../../Utility/apiCalls'
 import './App.css'
 
-// import { fetchAPI } from '../../Utility/apiCalls';
 import './App.css';
 
 export const App = () => {
@@ -12,9 +11,10 @@ export const App = () => {
 
   useEffect(() => {
     (async () => {
-      let {deck_id} = await fetchApi(apiMainUrl);
-      let allCards = await fetchApi(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=52`)
-      setCards(allCards.cards)
+      let {data: {deck_id}} = await fetchApi(apiMainUrl);
+      console.log(deck_id)
+      let { data: { cards: allCards } } = await fetchApi(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=52`)
+      setCards(allCards)
     })();
   }, []);
       

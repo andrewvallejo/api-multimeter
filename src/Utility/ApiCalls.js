@@ -1,6 +1,12 @@
 
-export const fetchApi = async (url) => {
-  const response = await fetch(url);
-  const json = await response.json();
-  return json;
-}
+import axios from "axios";
+
+// export const fetchApi = async (url) => {
+//   const response = await fetch(url);
+//   const json = await response.json();
+//   return json;
+// }
+
+
+
+export const fetchApi = async (url) => await axios.get(url) 
